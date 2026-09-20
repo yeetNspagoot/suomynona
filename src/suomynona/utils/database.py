@@ -56,3 +56,16 @@ async def remove_guild_setting(db: aiosqlite.Connection, guild_id: int, setting_
         """, (guild_id, setting_key)
     )
     await db.commit()
+
+
+async def get_guild_setting(db: aiosqlite.Connection, guild_id: int, setting_key: GuildSettingKey) -> int | None:
+    async with db.execute(
+        """
+        SELECT setting_value
+        FROM guild_settings
+        WHERE guild_id = ? AND setting_key = ?
+        """, (guild_id, setting_key)
+    ) as cursor:
+        row = await cursor.fetchone()
+
+    return row["setting_value"] if row is not None else None
