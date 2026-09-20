@@ -1,0 +1,21 @@
+[project]
+name = "suomynona"
+version = "0.1.0"
+description = "A Discord bot focused on server moderation and logging."
+readme = "README.md"
+authors = [
+    { name = "yeetnspagoot", email = "yeetnspagoot@proton.me" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "hikari>=2.6.0",
+    "hikari-lightbulb>=3.2.6",
+    "python-dotenv>=1.2.3",
+]
+
+[project.scripts]
+suomynona = "suomynona.__main__:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
