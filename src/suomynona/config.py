@@ -9,6 +9,9 @@ load_dotenv()
 # Environment
 DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
 
-# Bot 
+# Bot
 DEFAULT_COLOUR = hikari.Colour(0x9F005A)
 ERROR_COLOUR = hikari.Colour(0xFF0000)
+
+# Paths
+DB_PATH = "data/suomynona.db"
