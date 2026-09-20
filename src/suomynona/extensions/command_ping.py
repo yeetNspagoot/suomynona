@@ -1,5 +1,7 @@
 import lightbulb
 
+from suomynona.utils import messages
+
 loader = lightbulb.Loader()
 
 
@@ -8,4 +10,5 @@ class PingCommand(lightbulb.SlashCommand, name="ping", description="Checks if th
 
     @lightbulb.invoke
     async def invoke(self, ctx: lightbulb.Context) -> None:
-        await ctx.respond("Pong!")
+        response = messages.build_response(content="Pong!")
+        await ctx.respond(components=response)
