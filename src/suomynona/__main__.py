@@ -7,7 +7,9 @@ from suomynona.utils import database
 
 
 def main() -> None:
-    bot = hikari.GatewayBot(token=config.DISCORD_TOKEN, intents=hikari.Intents.ALL_UNPRIVILEGED)
+    bot = hikari.GatewayBot(
+        token=config.DISCORD_TOKEN, intents=hikari.Intents.ALL_UNPRIVILEGED
+    )
     client = lightbulb.client_from_app(bot)
 
     @bot.listen(hikari.StartingEvent)

@@ -7,7 +7,7 @@ def build_response(
     content: str,
     title: str | None = None,
     footer: str | None = None,
-    accent_colour: hikari.Colour = config.DEFAULT_COLOUR
+    accent_colour: hikari.Colour = config.DEFAULT_COLOUR,
 ) -> list[hikari.api.ComponentBuilder]:
     """Creates a nicely formatted message using Discord's Components V2"""
 
